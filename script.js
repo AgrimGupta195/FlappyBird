@@ -57,6 +57,7 @@ window.onload = function() {
     requestAnimationFrame(update); //on every frame change, call update function
     setInterval(pipeGenerator, 1500);
     document.addEventListener('keydown', moveBird);
+    document.addEventListener('touchstart', moveBird);
 }
 function update(){
     requestAnimationFrame(update);
@@ -142,7 +143,7 @@ function pipeGenerator(){
 }
 function moveBird(e){
     
-    if(e.code =='Space' ||e.code=='ArrowUp' || e.code=='KeyW'){
+    if(e.code =='Space' ||e.code=='ArrowUp' || e.code=='KeyW'||e.type === 'touchstart'){
         if(bgm.paused){
             bgm.play();
         }
